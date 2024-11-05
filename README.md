@@ -1,12 +1,49 @@
-This repository contains the design and implementation of a Java-based app mimicking a library, written by Aaron Phan for ECE 422C: Software Design and Implementation II at The University of Texas at Austin. The app allows users to access a library of items such as books, DVDs, audiobooks, games, and comic books. 
-The project consists of two main components: a server-side application (LibraryServer) and a client-side application (LibraryClient), which communicate over a network to enable users to interact with the library.
+# Java-based Library App
 
-The server-side application (LibraryServer) is responsible for managing the library's inventory, handling client requests through the use of a helper class (ClientHandler), and facilitating communication between clients. It utilizes Java socket communication to establish a network connection with clients, allowing multiple users to access the library simultaneously. The server maintains a centralized database of library items and their availability status.
+This repository contains a Java-based application simulating a library system, developed as a final project for ECE 422C: Software Design and Implementation II at the University of Texas at Austin. The application enables users to interact with a collection of items, including books, DVDs, audiobooks, games, and comic books.
 
-The client-side application (LibraryClient) provides users with a graphical interface (ClientApp) to interact with the library. Users can search for items, check out and return items, view their checked-out items, and communicate with other users. The client application communicates with the server to retrieve library information and update the library's status based on user actions.
+## Project Overview
 
-The project utilizes Java for both the server and client applications, the GSON library for JSON object serialization and deserialization, JavaFX and Scene Builder for UI/UX elements, and MongoDB, an online database utilizing NoSQL that handles storage of user login information and checked-out item lists for each registered user.
+The project is structured into two main components:
 
-Features include deployment of the LibraryServer on Heroku (cloud application hosting platform), password hashing/salting, usage of MongoDB, and a Maven build system.
+### 1. LibraryServer
+The server-side application that manages the library's inventory and handles client requests. Key features include:
 
-This code is not to be used in any manner consistent with cheating, plagiarism, or other form of uncredited usage. For any questions related to implementation or usage, please contact me at atp2323@utexas.edu. This code is meant to be used for portfolio demonstration purposes with potential employers.
+- **Centralized Inventory Management**: Manages a database of library items and their availability.
+- **Java Socket Communication**: Establishes network connections with clients to support multiple simultaneous users.
+- **Client Requests Handling**: Processes requests such as item checkout, returns, and account information retrieval.
+
+### 2. LibraryClient
+The client-side application provides users with an interface to interact with the library system. Users can:
+
+- **Browse Inventory**: Search and view available items in the library.
+- **Checkout and Return Items**: Borrow items and return them when done.
+- **View Account Information**: Access user-specific information, including borrowed items and account status.
+
+The client and server applications communicate over a network using Java sockets to allow real-time interaction with the library's system.
+
+## Technologies Used
+
+- **Java**: Core language for both server and client applications.
+- **GSON**: For JSON object serialization and deserialization.
+- **JavaFX and Scene Builder**: UI and UX elements for the client interface.
+- **MongoDB**: An online NoSQL database for managing user login information and lists of checked-out items.
+- **Maven**: Build automation tool for managing dependencies and compiling the project.
+
+## Features
+
+- **Multi-user Support**: Multiple clients can connect and interact with the library simultaneously.
+- **Inventory Management**: Tracks availability and maintains records of all library items.
+- **User Account Management**: Each user can access their account information, including borrowed items and due dates.
+- **Secure User Authentication**: Passwords are securely hashed and salted before being stored in MongoDB.
+- **Cloud Deployment**: Server is hosted on Heroku, a cloud hosting service used to run the server.
+
+### Prerequisites
+- Java Development Kit (JDK) 8 or higher
+- Network configuration to enable client-server communication (default uses localhost)
+
+## Usage and Restrictions
+
+> **Important**: This code is intended solely for portfolio and demonstration purposes with potential employers. It is not to be used in any manner that constitutes cheating, plagiarism, or uncredited usage. 
+
+For any questions regarding implementation or usage, please contact Aaron Phan at [atp2323@utexas.edu](mailto:atp2323@utexas.edu).
